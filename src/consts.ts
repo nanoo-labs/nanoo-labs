@@ -1,8 +1,8 @@
 import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "Astro Nano",
-  EMAIL: "markhorn.dev@gmail.com",
+  NAME: "Nanoo",
+  EMAIL: "dev@nanoo.cloud",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
@@ -10,12 +10,12 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  DESCRIPTION: "Nanoo Labs - Built to be fast, simple, and scalable.",
 };
 
 export const BLOG: Metadata = {
   TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  DESCRIPTION: "A collection of articles on Nanoo Labs",
 };
 
 export const WORK: Metadata = {
@@ -32,14 +32,14 @@ export const PROJECTS: Metadata = {
 export const SOCIALS: Socials = [
   {
     NAME: "twitter-x",
-    HREF: "https://twitter.com/markhorn_dev",
+    HREF: "https://twitter.com/nanoo.labs",
   },
   {
     NAME: "github",
-    HREF: "https://github.com/markhorn-dev",
+    HREF: "https://github.com/nanoo-labs",
   },
   {
-    NAME: "linkedin",
+    NAME: "instagram",
     HREF: "https://www.linkedin.com/in/markhorn-dev",
   },
 ];
