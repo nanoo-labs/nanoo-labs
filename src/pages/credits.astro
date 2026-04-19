@@ -1,0 +1,59 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+
+const CREDITS = [
+  {
+    NAME: "Astro Nano",
+    DESCRIPTION: "The original minimalist theme this site is based on.",
+    HREF: "https://github.com/markhorn-dev/astro-nano",
+  },
+  {
+    NAME: "Geist Sans",
+    DESCRIPTION: "A beautiful font designed by Vercel for a modern interface.",
+    HREF: "https://vercel.com/font/sans",
+  },
+  {
+    NAME: "FontAwesome",
+    DESCRIPTION: "The provider of iconic SVG icons throughout the site.",
+    HREF: "https://fontawesome.com",
+  },
+  {
+    NAME: "Astro",
+    DESCRIPTION: "The web framework for content-driven websites.",
+    HREF: "https://astro.build",
+  }
+];
+---
+
+<PageLayout title="Credits" description="People and technologies that made this site possible.">
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">Credits</div>
+      <p class="animate">
+        This project is built upon the work of several amazing creators and technologies.
+        I would like to express my gratitude to the following:
+      </p>
+      <ul class="flex flex-col space-y-8">
+        {
+          CREDITS.map((credit) => (
+            <li class="animate">
+              <div class="space-y-1">
+                <Link href={credit.HREF} external class="font-semibold text-black dark:text-white">
+                  {credit.NAME}
+                </Link>
+                <div class="text-sm opacity-75">
+                  {credit.DESCRIPTION}
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="animate text-sm italic">
+        and a special thank you to you for visiting this site.
+      </p>
+    </div>
+  </Container>
+</PageLayout>
