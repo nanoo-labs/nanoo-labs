@@ -1,0 +1,7 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "nanoo-lab"
+compatibility_date = "2026-04-20"
+pages_build_output_dir = "./dist"
+
+[vars]
+# SITE_URL = "https://nanoo.cloud"
