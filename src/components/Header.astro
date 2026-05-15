@@ -11,7 +11,8 @@ import { SITE } from "@consts";
         {SITE.TITLE}
       </div>
     </Link>
-    <nav class="flex items-center gap-1 text-sm">
+
+    <nav class="hidden items-center gap-1 text-sm sm:flex">
       <Link href="/blog">blog</Link>
       <span>
         {`/`}
@@ -23,12 +24,13 @@ import { SITE } from "@consts";
       <button
         id="magnifying-glass"
         aria-label="Search"
-        class="flex items-center rounded-sm border border-black/15 bg-zinc-100 px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/25 dark:bg-[#0a0a0a] dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
-      >        <svg
-          height="16"
+        class="flex items-center rounded-sm border border-black/15 bg-zinc-100 px-3 py-1.5 text-xs transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/25 dark:bg-[#0a0a0a] dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+      >
+        <svg
+          height="20"
           stroke-linejoin="round"
           viewBox="0 0 16 16"
-          width="16"
+          width="20"
           style="color: currentcolor;"
           ><path
             fill-rule="evenodd"
@@ -38,6 +40,153 @@ import { SITE } from "@consts";
         >
         &nbsp;Search
       </button>
+      <Link
+        href="https://github.com/nanoolabs"
+        external
+        aria-label="GitHub"
+        underline={false}
+        class="flex items-center px-3 py-1.5 transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
+      >
+        <svg
+          class="size-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 496 512"
+          ><path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.5 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5.7 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-.7zm-4.1-2.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1z"
+          ></path></svg
+        >
+      </Link>
     </nav>
+
+    <div class="flex items-center gap-2 sm:hidden">
+      <Link
+        href="https://github.com/nanoolabs"
+        external
+        aria-label="GitHub"
+        underline={false}
+        class="flex items-center px-3 py-1.5 transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
+      >
+        <svg
+          class="size-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 496 512"
+          ><path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.5 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5.7 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-.7zm-4.1-2.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1z"
+          ></path></svg
+        >
+      </Link>
+      <button
+        id="hamburger-button"
+        aria-label="Open mobile menu"
+        class="flex items-center px-3 py-1.5 transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-7 w-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 z-40 -translate-x-full transform bg-black/50 backdrop-blur-xs transition-transform duration-300 sm:hidden"
+  >
+    <div
+      class="flex h-full w-64 flex-col space-y-6 bg-white p-6 dark:bg-[#050505]"
+    >
+      <button
+        id="close-mobile-menu"
+        aria-label="Close mobile menu"
+        class="self-end p-2.5 transition-colors duration-300 ease-in-out hover:text-black dark:hover:text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-7 w-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+      <nav class="flex flex-col gap-4 text-lg">
+        <Link href="/blog">blog</Link>
+        <Link href="/projects">projects</Link>
+        <button
+          id="magnifying-glass-mobile"
+          aria-label="Search"
+          class="flex items-center rounded-sm border border-black/15 bg-zinc-100 px-2 py-1 text-base transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/25 dark:bg-[#0a0a0a] dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
+        >
+          <svg
+            height="20"
+            stroke-linejoin="round"
+            viewBox="0 0 16 16"
+            width="20"
+            style="color: currentcolor;"
+            ><path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3.5 7C3.5 5.067 5.067 3.5 7 3.5C8.933 3.5 10.5 5.067 10.5 7C10.5 7.88461 10.1718 8.69256 9.63058 9.30876L9.30876 9.63058C8.69256 10.1718 7.88461 10.5 7 10.5C5.067 10.5 3.5 8.933 3.5 7ZM9.96544 11.0261C9.13578 11.6382 8.11014 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7C12 8.11014 11.6382 9.13578 11.0261 9.96544L14.0303 12.9697L14.5607 13.5L13.5 14.5607L12.9697 14.0303L9.96544 11.0261Z"
+              fill="currentColor"></path></svg
+          >
+          &nbsp;Search
+        </button>
+      </nav>
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  const hamburgerButton = document.getElementById("hamburger-button");
+  const closeMobileMenuButton = document.getElementById("close-mobile-menu");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileSearchButton = document.getElementById("magnifying-glass-mobile");
+  const desktopSearchButton = document.getElementById("magnifying-glass");
+
+  hamburgerButton?.addEventListener("click", () => {
+    mobileMenu?.classList.remove("-translate-x-full");
+    document.body.classList.add("no-scroll");
+  });
+
+  closeMobileMenuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.add("-translate-x-full");
+    document.body.classList.remove("no-scroll");
+  });
+
+  mobileMenu?.addEventListener("click", (event) => {
+    if (event.target === mobileMenu) {
+      mobileMenu?.classList.add("-translate-x-full");
+      document.body.classList.remove("no-scroll");
+    }
+  });
+
+  const mobileNavLinks = mobileMenu?.querySelectorAll("nav a");
+  mobileNavLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("-translate-x-full");
+      document.body.classList.remove("no-scroll");
+    });
+  });
+
+  mobileSearchButton?.addEventListener("click", () => {
+    mobileMenu?.classList.add("-translate-x-full");
+    document.body.classList.remove("no-scroll");
+    desktopSearchButton?.click();
+  });
+</script>
