@@ -1,116 +1,147 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE, HOME, SOCIALS } from "@consts";
 import ArrowCard from "@components/ArrowCard.astro";
-import Link from "@components/Link.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+import { SITE, SOCIALS } from "@consts";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects: CollectionEntry<"projects">[] = (
-  await getCollection("projects")
-)
+const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 ---
 
-<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<Layout title="Home" description={SITE.DESCRIPTION}>
   <Container>
-    <aside data-pagefind-ignore>
-      <h1 class="font-semibold text-black dark:text-white">
-        Welcome to Nanoolabs
-      </h1>
-      <div class="space-y-16">
-        <section>
-          <article class="space-y-4">
-          <span>
-              <blockquote>Built fast, simple, and scalable</blockquote>
-              <p>
-                Currently, development lab for nanoo.biz.id. Experiment mix with
-                Cloud, Edge, and Business.
-              </p>
-            </span>
-          </article>
-        </section>
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Latest posts
-            </h2>
-            <Link href="/blog"> See all posts </Link>
+    <div class="space-y-16 sm:space-y-24">
+      <section class="animate py-8">
+        <div class="mb-8">
+          <div
+            class="size-24 flex items-center justify-center overflow-hidden rounded-lg border border-black/10 bg-zinc-100 dark:border-white/10 dark:bg-zinc-900"
+          >
+            <!-- <img src="/your-profile.jpg" alt="Profile" class="size-full object-cover" /> -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-zinc-400"
+              ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle
+                cx="12"
+                cy="7"
+                r="4"></circle></svg
+            >
           </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              blog.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Recent projects
-            </h2>
-            <Link href="/projects"> See all projects </Link>
+        </div>
+        <article class="space-y-4">
+          <h1 class="text-2xl font-semibold text-black dark:text-white">
+            A Lab for Experiments.
+          </h1>
+          <blockquote
+            class="mt-4 border-l-2 border-zinc-300 pl-4 text-zinc-600 italic dark:border-zinc-700 dark:text-white/70"
+          >
+            "Built fast, simple, and scalable"
+          </blockquote>
+          <div class="mt-4 text-zinc-600 dark:text-white/70">
+            Nanoolabs is a development lab for <strong>nanoo.biz.id</strong>. I
+            experiment with Cloud, Edge, and Business logic to create simple and
+            effective solutions.
           </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              projects.map((project) => (
-                <li>
-                  <ArrowCard entry={project} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+        </article>
+        <nav class="flex flex-wrap gap-2 pt-6">
+          <a
+            href="/blog"
+            class="rounded-sm border border-black/15 bg-zinc-100 px-3 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black dark:border-white/25 dark:bg-[#0a0a0a] dark:hover:bg-white/5 dark:hover:text-white"
+          >
+            Read the blog
+          </a>
+          <a
+            href="/projects"
+            class="rounded-sm border border-black/15 bg-zinc-100 px-3 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black dark:border-white/25 dark:bg-[#0a0a0a] dark:hover:bg-white/5 dark:hover:text-white"
+          >
+            View projects
+          </a>
+        </nav>
+      </section>
 
-        <section class="animate space-y-4">
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">Latest posts</h2>
+          <a
+            href="/blog"
+            class="text-sm text-zinc-500 underline decoration-zinc-300 transition-colors hover:text-black hover:decoration-black dark:text-white/50 dark:decoration-white/30 dark:hover:text-white dark:hover:decoration-white"
+          >
+            See all posts
+          </a>
+        </div>
+        <ul class="not-prose flex flex-col gap-4">
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
           <h2 class="font-semibold text-black dark:text-white">
-            Let's Connect
+            Recent projects
           </h2>
-          <article>
-            <p>
-              If you want to get in touch with me about something or just to say
-              hi, reach out on social media or send me an email.
-            </p>
-          </article>
-          <ul class="not-prose flex flex-wrap gap-2">
-            {
-              SOCIALS.map((SOCIAL) => (
+          <a
+            href="/projects"
+            class="text-sm text-zinc-500 underline decoration-zinc-300 transition-colors hover:text-black hover:decoration-black dark:text-white/50 dark:decoration-white/30 dark:hover:text-white dark:hover:decoration-white"
+          >
+            See all projects
+          </a>
+        </div>
+        <ul class="not-prose flex flex-col gap-4">
+          {
+            projects.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-4">
+        <h2 class="font-semibold text-black dark:text-white">Contact</h2>
+        <article>
+          <p>Feel free to contact me for collaboration or any questions.</p>
+        </article>
+        <ul class="not-prose flex flex-wrap gap-2">
+          {
+            SOCIALS.filter((s) => s.NAME.toLowerCase() !== "github").map(
+              (SOCIAL) => (
                 <li class="flex gap-x-2 text-nowrap">
-                  <Link
+                  <a
                     href={SOCIAL.HREF}
-                    external
+                    target="_blank"
+                    class="rounded-sm border border-black/15 bg-zinc-100 px-3 py-1.5 text-sm transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black dark:border-white/25 dark:bg-[#0a0a0a] dark:hover:bg-white/5 dark:hover:text-white"
                     aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
                   >
                     {SOCIAL.NAME}
-                  </Link>
-                  {"/"}
+                  </a>
                 </li>
-              ))
-            }
-            <li class="line-clamp-1">
-              <Link
-                href={`mailto:${SITE.EMAIL}`}
-                aria-label={`Email ${SITE.TITLE}`}
-              >
-                {SITE.EMAIL}
-              </Link>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </aside>
+              ),
+            )
+          }
+        </ul>
+      </section>
+    </div>
   </Container>
 </Layout>
